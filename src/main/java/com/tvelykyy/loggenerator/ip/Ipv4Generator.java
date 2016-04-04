@@ -1,5 +1,11 @@
 package com.tvelykyy.loggenerator.ip;
 
+/**
+ * Interface used for generating IpV4 addresses.
+ */
 public interface Ipv4Generator {
-    String generate();
+    /**
+     * Returns IpV4 address.
+     */
+    String get();
 }

@@ -1,5 +1,8 @@
 package com.tvelykyy.loggenerator.page;
 
+/**
+ * Class represents combination of pseudo-random site page and it's size.
+ */
 public class Page {
     private final String path;
     private final int size;

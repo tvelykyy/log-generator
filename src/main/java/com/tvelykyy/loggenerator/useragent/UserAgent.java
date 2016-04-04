@@ -1,7 +1,8 @@
 package com.tvelykyy.loggenerator.useragent;
 
-import java.util.Random;
-
+/**
+ * Enum represents set of predefined list of user-agents.
+ */
 public enum UserAgent {
     CHROME_41("Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36"),
     FIREFOX_40("Mozilla/5.0 (Windows NT 6.1; WOW64; rv:40.0) Gecko/20100101 Firefox/40.1"),
@@ -9,15 +10,13 @@ public enum UserAgent {
     SAFARI_7("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_3) AppleWebKit/537.75.14 (KHTML, like Gecko) Version/7.0.3 Safari/7046A194A");
 
     private String detailed;
-    private static final Random R = new Random();
 
     UserAgent(String detailed) {
         this.detailed = detailed;
     }
 
-
-
     public String getDetailed() {
         return detailed;
     }
+
 }

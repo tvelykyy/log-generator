@@ -10,10 +10,13 @@ import com.tvelykyy.loggenerator.useragent.UserAgentGenerator;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 
+/**
+ * Class generate log messages using predefined set of generators.
+ */
 public class LogGenerator {
+    // Always GET requests.
     private static final String LOG_FORMAT = "%s - - [%s] \"GET %s HTTP/1.1\" %s %s \"%s\" \"%s\"";
     private static final DateTimeFormatter DATE_FORMATTER = DateTimeFormatter.ofPattern("d/MMM/uuuu HH:mm:ss Z");
-
 
     private Ipv4Generator ip;
     private PageGenerator page;
@@ -31,17 +34,21 @@ public class LogGenerator {
         this.userAgent = userAgent;
     }
 
+    /**
+     * Generates log message using provided generators.
+     * @return String representing log message.
+     */
     public String get() {
-        Page p = page.generate();
+        Page p = page.get();
         String log = String.format(
             LOG_FORMAT,
-            ip.generate(),
+            ip.get(),
             ZonedDateTime.now().format(DATE_FORMATTER),
             p.getPath(),
-            statusCode.generate(),
+            statusCode.get(),
             p.getSize(),
-            referrer.generate(),
-            userAgent.generate()
+            referrer.get(),
+            userAgent.get()
         );
 
         return log;

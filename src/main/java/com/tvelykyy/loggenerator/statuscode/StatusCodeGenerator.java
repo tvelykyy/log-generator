@@ -1,5 +1,12 @@
 package com.tvelykyy.loggenerator.statuscode;
 
+/**
+ * Interface used for generating http status codes.
+ */
 public interface StatusCodeGenerator {
-    int generate();
+
+    /**
+     * Returns http status code.
+     */
+    int get();
 }

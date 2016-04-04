@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+/**
+ * Class generates and keeps some amount of pseudo-random {@link Page}.
+ */
 public class Pages {
     private static final Random R = new Random();
     private static final int SIZE_BOUND = 1000;
@@ -17,14 +20,19 @@ public class Pages {
         }
     }
 
+    /**
+     * Return page by index.
+     */
     public Page getPage(int index) {
         return pages.get(index);
     }
 
+    /**
+     * Returns number of generated pages.
+     */
     public int getCount() {
         return pages.size();
     }
-
 
 }
 
