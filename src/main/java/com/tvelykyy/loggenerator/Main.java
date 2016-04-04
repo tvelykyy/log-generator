@@ -44,5 +44,7 @@ public class Main {
                 LOGGER.debug(gen.get());
         });
 
+        executor.shutdown();
+
     }
 }
